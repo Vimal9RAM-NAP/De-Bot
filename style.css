@@ -9,7 +9,6 @@
     --text-muted: #b3b3b3;
     --btn-primary-bg: #ffffff;
     --btn-primary-text: #000000;
-    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 * {
@@ -45,8 +44,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #2d2d2d;
-    padding: 8px 4px 16px 4px;
+    border-bottom: 1px solid var(--border-color);
+    padding: 4px 4px 16px 4px;
 }
 
 .brand {
@@ -59,7 +58,7 @@ body {
     font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 2px;
-    font-family: var(--font-mono);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     color: #ffffff;
 }
 
@@ -71,7 +70,7 @@ body {
 }
 
 .version-tag {
-    font-family: var(--font-mono);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     font-size: 0.8rem;
     color: #ffffff;
     border: 1px solid var(--border-color);
@@ -85,6 +84,7 @@ body {
     grid-template-columns: 1fr 280px 1fr;
     gap: 20px;
     min-height: 560px;
+    align-items: stretch;
 }
 
 @media (max-width: 960px) {
@@ -116,8 +116,9 @@ textarea {
     border-radius: 6px;
     color: #ffffff;
     padding: 16px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
+    letter-spacing: 0.2px;
     resize: none;
     outline: none;
 }
@@ -135,18 +136,21 @@ textarea:focus {
 }
 
 .counter-text {
-    font-family: var(--font-mono);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     font-size: 0.75rem;
     color: var(--text-muted);
     letter-spacing: 1px;
 }
 
 .controls-pane {
+    background: var(--pane-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 16px;
-    padding: 10px 0;
+    padding: 20px;
 }
 
 .control-group {
@@ -167,7 +171,7 @@ textarea:focus {
     background: var(--input-bg);
     border: 1px solid var(--border-color);
     color: #ffffff;
-    padding: 10px;
+    padding: 12px;
     border-radius: 6px;
     font-size: 0.85rem;
     outline: none;
@@ -186,13 +190,13 @@ textarea:focus {
 }
 
 .btn {
-    padding: 10px 14px;
+    padding: 12px 14px;
     border-radius: 6px;
     font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     border: 1px solid var(--border-color);
-    background: var(--pane-bg);
+    background: var(--input-bg);
     color: #ffffff;
     transition: all 0.2s ease;
     text-transform: uppercase;
@@ -208,12 +212,16 @@ textarea:focus {
     color: var(--btn-primary-text);
     border: none;
     padding: 16px;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 6px;
+    transition: transform 0.1s ease, background 0.2s ease;
 }
 
 .btn-primary:hover {
-    background: #e6e6e6;
+    background: #e2e2e2;
+    transform: translateY(-1px);
 }
 
 .action-stack {
