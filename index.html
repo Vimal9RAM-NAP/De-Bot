@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DE-BOT | AI Text Humanizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="brand">
+                <h1 class="logo-text">DE-BOT</h1>
+                <span class="brand-sub">HUMANIZER ENGINE</span>
+            </div>
+            <div class="version-tag">v1.0</div>
+        </header>
+
+        <main class="workspace-grid">
+            <section class="pane input-pane">
+                <div class="textarea-container">
+                    <textarea id="aiInput" placeholder="Paste or type your AI text here..."></textarea>
+                </div>
+                <div class="pane-footer">
+                    <span id="inputWordCount" class="counter-text">0 WORDS | 0 CHARS</span>
+                </div>
+            </section>
+
+            <section class="controls-pane">
+                <div class="control-group">
+                    <label for="toneSelect" class="control-label">SELECTION TYPE (TONE)</label>
+                    <select id="toneSelect" class="select-input">
+                        <option value="casual">Casual Conversational</option>
+                        <option value="professional" selected>Professional Standard</option>
+                        <option value="blog">Blog & Content</option>
+                        <option value="academic">Academic & Formal</option>
+                    </select>
+                </div>
+
+                <div class="button-row">
+                    <button id="resetBtn" class="btn btn-secondary">RESET</button>
+                    <button id="sampleBtn" class="btn btn-secondary">SAMPLE AI TEXT</button>
+                </div>
+
+                <button id="humanizeBtn" class="btn btn-primary">humanize</button>
+
+                <div class="action-stack">
+                    <button id="shareBtn" class="btn btn-outline">SHARE &#x2197;</button>
+                    <button id="downloadBtn" class="btn btn-outline">DOWNLOAD (.TXT)</button>
+                </div>
+            </section>
+
+            <section class="pane output-pane">
+                <div class="output-header">
+                    <button id="copyBtn" class="btn btn-copy">
+                        <span id="copyText">copy</span>
+                        <span id="copyFeedback" class="copy-tooltip">Copied!</span>
+                    </button>
+                </div>
+                <div class="textarea-container">
+                    <textarea id="humanOutput" readonly placeholder="Humanized output will appear here..."></textarea>
+                </div>
+                <div class="pane-footer">
+                    <span id="outputWordCount" class="counter-text">0 WORDS | 0 CHARS</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
